@@ -61,10 +61,10 @@ WHERE OutcomeTSL = 'Win';
 --FTP Profit Based On Confluences
 
 SELECT DISTINCT Confluence,
-	            COUNT(Confluence) Confluences,
-		    SUM(ProfitLossFTP) TotalProfit,
-		    ROUND(AVG(ProfitLossFTP),0) AvgProfit,
-	            (SELECT SUM(ProfitLossFTP) FROM AUDJPY) OverallProfit
+	        COUNT(Confluence) Confluences,
+	        SUM(ProfitLossFTP) TotalProfit,
+	        ROUND(AVG(ProfitLossFTP),0) AvgProfit,
+	        (SELECT SUM(ProfitLossFTP) FROM AUDJPY) OverallProfit
 FROM AUDJPY 
 WHERE OutcomeFTP = 'Win'
 	GROUP BY Confluence
